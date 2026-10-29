@@ -1,0 +1,73 @@
+/* Design tokens. Light is the default; dark applies via OS preference or [data-theme='dark']. */
+:root {
+  --bg: #edf1ee;
+  --surface: #ffffff;
+  --sunk: #e3e9e5;
+  --ink: #15241e;
+  --muted: #55665e;
+  --line: #d3dcd7;
+  --court: #1f6a53;
+  --court-shade: #1a5c48;
+  --court-ink: #f3f7f4;
+  --accent: #bf4019;
+  --accent-ink: #ffffff;
+  --good: #23783f;
+  --bad: #b83232;
+  --figure-near: #f4f7f5;
+  --figure-far: rgba(244, 247, 245, 0.45);
+  --racket-side: #ffc9b3;
+  --cork: #ffffff;
+  --skirt: #f2efe6;
+  --skirt-edge: #2a2a2a;
+  --focus: #bf4019;
+
+  --font-display: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+  --tap: 44px;
+  --page-max: 1180px;
+  --gutter: 16px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0e1613;
+    --surface: #16211d;
+    --sunk: #111b17;
+    --ink: #e4ece7;
+    --muted: #9aaaa2;
+    --line: #29372f;
+    --court: #1b5a46;
+    --court-shade: #174e3d;
+    --court-ink: #e9efeb;
+    --accent: #f2683f;
+    --accent-ink: #1a0d08;
+    --good: #5cc27d;
+    --bad: #ef6b6b;
+    --focus: #f2683f;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0e1613;
+  --surface: #16211d;
+  --sunk: #111b17;
+  --ink: #e4ece7;
+  --muted: #9aaaa2;
+  --line: #29372f;
+  --court: #1b5a46;
+  --court-shade: #174e3d;
+  --court-ink: #e9efeb;
+  --accent: #f2683f;
+  --accent-ink: #1a0d08;
+  --good: #5cc27d;
+  --bad: #ef6b6b;
+  --focus: #f2683f;
+  color-scheme: dark;
+}
