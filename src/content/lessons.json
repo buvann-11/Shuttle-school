@@ -1,0 +1,1005 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "grip",
+      "level": "Foundations",
+      "title": "Grips",
+      "kind": "grip",
+      "summary": "Hold the racket loosely, like a handshake. A quarter turn switches forehand to backhand.",
+      "keys": [
+        {
+          "label": "Forehand grip",
+          "cue": "Shake hands with the handle",
+          "grip": "forehand",
+          "duration": 0
+        },
+        {
+          "label": "Backhand thumb grip",
+          "cue": "Quarter turn, thumb flat on the wide bevel",
+          "grip": "backhand",
+          "duration": 900
+        },
+        {
+          "label": "Forehand grip",
+          "cue": "Turn back for forehand shots",
+          "grip": "forehand",
+          "duration": 900
+        }
+      ],
+      "points": [
+        "Hold near the end of the handle, with a gap under the palm.",
+        "Forehand: the V of thumb and index finger sits on the narrow upper-left bevel (right-handers).",
+        "Backhand: quarter turn, thumb pad flat on the wide back bevel.",
+        "Grip loosely. Squeeze only at contact."
+      ],
+      "mistakes": [
+        "Frying-pan grip (face to the ceiling). It locks the wrist.",
+        "Squeezing all rally long. Your forearm tires.",
+        "Holding high up the shaft. You lose reach."
+      ],
+      "drill": "Switch forehand → backhand → forehand 30 times without looking. Then bounce the shuttle on the racket 20 times each side."
+    },
+    {
+      "id": "ready",
+      "level": "Foundations",
+      "title": "Ready stance",
+      "kind": "figure",
+      "summary": "The base position you return to after every shot: low, balanced, racket up.",
+      "keys": [
+        {
+          "label": "Stand tall",
+          "cue": "Start relaxed",
+          "duration": 0,
+          "pose": {
+            "torso": 0,
+            "racketShoulder": 5,
+            "racketElbow": 10,
+            "wrist": 0,
+            "otherShoulder": 5,
+            "otherElbow": 10,
+            "racketHip": 8,
+            "racketKnee": 2,
+            "otherHip": -8,
+            "otherKnee": 2
+          }
+        },
+        {
+          "label": "Feet wider than shoulders",
+          "cue": "Racket foot slightly forward",
+          "duration": 600,
+          "pose": {
+            "torso": 4,
+            "racketShoulder": 8,
+            "racketElbow": 14,
+            "wrist": 0,
+            "otherShoulder": 8,
+            "otherElbow": 14,
+            "racketHip": 20,
+            "racketKnee": 8,
+            "otherHip": -18,
+            "otherKnee": 8
+          }
+        },
+        {
+          "label": "Bend the knees",
+          "cue": "Weight on the balls of the feet",
+          "duration": 600,
+          "pose": {
+            "racketShoulder": 10,
+            "racketElbow": 20,
+            "wrist": 0,
+            "otherShoulder": 14,
+            "otherElbow": 30
+          }
+        },
+        {
+          "label": "Racket up in front",
+          "cue": "Head of the racket at chest height",
+          "duration": 600,
+          "pose": {}
+        }
+      ],
+      "points": [
+        "Feet wider than shoulders, racket foot a little ahead.",
+        "Knees bent, heels light.",
+        "Racket in front at chest height.",
+        "Watch the opponent's racket, not the shuttle."
+      ],
+      "mistakes": [
+        "Straight legs. Your first step is late.",
+        "Racket hanging by the knees.",
+        "Weight on the heels."
+      ],
+      "drill": "Hold the stance for 30 s, 5 times. A partner points left or right; take one step and return."
+    },
+    {
+      "id": "split",
+      "level": "Foundations",
+      "title": "Split step",
+      "kind": "figure",
+      "summary": "A small hop timed with the opponent's hit. It makes your first step explosive.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Watch the opponent",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Small hop",
+          "cue": "Hop as they start to hit",
+          "duration": 280,
+          "pose": {
+            "air": 14,
+            "racketKnee": 12,
+            "otherKnee": 12,
+            "racketHip": 14,
+            "otherHip": -12,
+            "torso": 8
+          }
+        },
+        {
+          "label": "Land wide",
+          "cue": "Land on the balls of the feet",
+          "duration": 240,
+          "pose": {
+            "racketHip": 32,
+            "racketKnee": 58,
+            "otherHip": -30,
+            "otherKnee": 50,
+            "torso": 18
+          }
+        },
+        {
+          "label": "Push off",
+          "cue": "Explode toward the shuttle",
+          "duration": 260,
+          "pose": {
+            "x": 22,
+            "torso": 26,
+            "racketHip": 46,
+            "racketKnee": 50,
+            "otherHip": -40,
+            "otherKnee": 6
+          }
+        },
+        {
+          "label": "Back to ready",
+          "cue": "Recover to base",
+          "duration": 600,
+          "pose": {}
+        }
+      ],
+      "points": [
+        "Land just as the opponent hits.",
+        "Keep the hop small.",
+        "Land wide with knees bent.",
+        "Push off the foot opposite to where you are going."
+      ],
+      "mistakes": [
+        "Hopping too early and landing flat.",
+        "Jumping high.",
+        "Skipping it when tired."
+      ],
+      "drill": "A partner fakes a hit every 2 s. Split step on each fake, then step to the corner they point at."
+    },
+    {
+      "id": "clear",
+      "level": "Strokes",
+      "title": "Forehand clear",
+      "kind": "figure",
+      "summary": "A high, deep shot to their back court. It buys you time.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Read the lift",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Turn side-on",
+          "cue": "Racket leg steps back, other hand points up",
+          "duration": 460,
+          "pose": {
+            "torso": -6,
+            "racketShoulder": 120,
+            "racketElbow": 85,
+            "wrist": 20,
+            "otherShoulder": 140,
+            "otherElbow": 10,
+            "racketHip": -26,
+            "racketKnee": 22,
+            "otherHip": 12,
+            "otherKnee": 14
+          }
+        },
+        {
+          "label": "Racket drop",
+          "cue": "Elbow high, racket falls behind the back",
+          "duration": 360,
+          "pose": {
+            "torso": -8,
+            "racketShoulder": 140,
+            "racketElbow": 120,
+            "wrist": 40,
+            "otherShoulder": 110,
+            "otherElbow": 40,
+            "racketHip": -28,
+            "racketKnee": 24,
+            "otherHip": 12,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Contact",
+          "cue": "Full reach, slightly in front",
+          "linear": true,
+          "duration": 170,
+          "pose": {
+            "torso": 8,
+            "racketShoulder": 152,
+            "racketElbow": 4,
+            "wrist": 6,
+            "otherShoulder": 40,
+            "otherElbow": 70,
+            "air": 6,
+            "racketHip": -4,
+            "racketKnee": 26,
+            "otherHip": 6,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Follow-through",
+          "cue": "Racket and racket leg swing forward together",
+          "duration": 300,
+          "pose": {
+            "x": 10,
+            "torso": 24,
+            "racketShoulder": 20,
+            "racketElbow": 20,
+            "wrist": 10,
+            "otherShoulder": 10,
+            "otherElbow": 60,
+            "racketHip": 34,
+            "racketKnee": 30,
+            "otherHip": -22,
+            "otherKnee": 28
+          }
+        },
+        {
+          "label": "Recover",
+          "cue": "Back to base",
+          "duration": 520,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 3,
+        "from": [70, -260],
+        "arcIn": -40,
+        "inDuration": 900,
+        "to": [460, -420],
+        "arcOut": -60,
+        "outDuration": 700
+      },
+      "points": [
+        "Turn side-on early.",
+        "Lift the elbow; the racket drops behind your back.",
+        "Hit at full stretch, slightly in front.",
+        "Rotate the forearm through contact."
+      ],
+      "mistakes": [
+        "Body facing the net.",
+        "Contact behind the head. The shuttle goes short.",
+        "Arm-only swing."
+      ],
+      "drill": "Shadow 3 × 15 clears with full turn and recovery. Then rally clear-to-clear with a partner."
+    },
+    {
+      "id": "smash",
+      "level": "Strokes",
+      "title": "Smash",
+      "kind": "figure",
+      "summary": "The attacking overhead. Same preparation as the clear, hit further in front and down.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Get behind the shuttle",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Load",
+          "cue": "Racket leg back, knees bent",
+          "duration": 440,
+          "pose": {
+            "torso": -6,
+            "racketShoulder": 120,
+            "racketElbow": 85,
+            "wrist": 20,
+            "otherShoulder": 140,
+            "otherElbow": 10,
+            "racketHip": -28,
+            "racketKnee": 44,
+            "otherHip": 18,
+            "otherKnee": 40
+          }
+        },
+        {
+          "label": "Jump and racket drop",
+          "cue": "Elbow leads upward",
+          "duration": 320,
+          "pose": {
+            "air": 18,
+            "torso": -10,
+            "racketShoulder": 165,
+            "racketElbow": 125,
+            "wrist": 40,
+            "otherShoulder": 120,
+            "otherElbow": 30,
+            "racketHip": -14,
+            "racketKnee": 50,
+            "otherHip": 20,
+            "otherKnee": 50
+          }
+        },
+        {
+          "label": "Contact in front",
+          "cue": "Hit down, wrist snaps",
+          "linear": true,
+          "duration": 150,
+          "pose": {
+            "air": 22,
+            "torso": 16,
+            "racketShoulder": 128,
+            "racketElbow": 4,
+            "wrist": 4,
+            "otherShoulder": 30,
+            "otherElbow": 80,
+            "racketHip": 8,
+            "racketKnee": 56,
+            "otherHip": -4,
+            "otherKnee": 50
+          }
+        },
+        {
+          "label": "Follow-through",
+          "cue": "Racket leg lands in front with the racket",
+          "duration": 280,
+          "pose": {
+            "x": 14,
+            "torso": 38,
+            "racketShoulder": -6,
+            "racketElbow": 6,
+            "wrist": -8,
+            "otherShoulder": 10,
+            "otherElbow": 70,
+            "racketHip": 36,
+            "racketKnee": 36,
+            "otherHip": -24,
+            "otherKnee": 30
+          }
+        },
+        {
+          "label": "Recover",
+          "cue": "Move forward for the reply",
+          "duration": 520,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 3,
+        "from": [40, -300],
+        "arcIn": -30,
+        "inDuration": 900,
+        "to": [440, 0],
+        "arcOut": 10,
+        "outDuration": 380
+      },
+      "points": [
+        "Prepare exactly like the clear.",
+        "Contact further in front, face angled down.",
+        "Power from legs, trunk and forearm.",
+        "Recover forward. Replies come short."
+      ],
+      "mistakes": [
+        "Contact behind the head.",
+        "Smashing from deep without balance.",
+        "Watching your own shot."
+      ],
+      "drill": "Partner lifts to mid court 10 times. Smash straight, recover after each. 4 sets."
+    },
+    {
+      "id": "drop",
+      "level": "Strokes",
+      "title": "Drop shot",
+      "kind": "figure",
+      "summary": "An overhead that falls just over the net. It looks like a clear until the last moment.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Read the lift",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Turn side-on",
+          "cue": "Same as a clear",
+          "duration": 460,
+          "pose": {
+            "torso": -6,
+            "racketShoulder": 120,
+            "racketElbow": 85,
+            "wrist": 20,
+            "otherShoulder": 140,
+            "otherElbow": 10,
+            "racketHip": -26,
+            "racketKnee": 22,
+            "otherHip": 12,
+            "otherKnee": 14
+          }
+        },
+        {
+          "label": "Racket drop",
+          "cue": "Disguise: full preparation",
+          "duration": 360,
+          "pose": {
+            "torso": -8,
+            "racketShoulder": 140,
+            "racketElbow": 120,
+            "wrist": 40,
+            "otherShoulder": 110,
+            "otherElbow": 40,
+            "racketHip": -28,
+            "racketKnee": 24,
+            "otherHip": 12,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Slow at contact",
+          "cue": "Decelerate and guide the shuttle",
+          "duration": 260,
+          "pose": {
+            "torso": 8,
+            "racketShoulder": 148,
+            "racketElbow": 6,
+            "wrist": 2,
+            "otherShoulder": 40,
+            "otherElbow": 70,
+            "racketHip": -14,
+            "racketKnee": 22,
+            "otherHip": 10,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Short follow-through",
+          "cue": "Racket stops early",
+          "duration": 360,
+          "pose": {
+            "torso": 14,
+            "racketShoulder": 110,
+            "racketElbow": 20,
+            "wrist": 10,
+            "otherShoulder": 20,
+            "otherElbow": 70,
+            "racketHip": 22,
+            "racketKnee": 24,
+            "otherHip": -16,
+            "otherKnee": 24
+          }
+        },
+        {
+          "label": "Recover",
+          "cue": "Expect a net reply",
+          "duration": 520,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 3,
+        "from": [70, -260],
+        "arcIn": -40,
+        "inDuration": 900,
+        "to": [320, 0],
+        "arcOut": -70,
+        "outDuration": 950
+      },
+      "points": [
+        "Same preparation as clear and smash.",
+        "Slow the racket just before contact.",
+        "Land it inside the short service line.",
+        "Follow it in for the net reply."
+      ],
+      "mistakes": [
+        "A lazy backswing that gives it away.",
+        "Hitting it high so it floats.",
+        "Pushing with the arm."
+      ],
+      "drill": "Hit 10 clears, then 10 drops from the same feed. Ask a partner if they could tell which was coming."
+    },
+    {
+      "id": "high-serve",
+      "level": "Strokes",
+      "title": "High serve",
+      "kind": "figure",
+      "summary": "The singles serve. A big underarm swing sends the shuttle high to the back line.",
+      "keys": [
+        {
+          "label": "Set up",
+          "cue": "Non-racket foot forward, shuttle held out",
+          "duration": 0,
+          "pose": {
+            "torso": 10,
+            "otherShoulder": 75,
+            "otherElbow": 20,
+            "racketShoulder": -50,
+            "racketElbow": 20,
+            "wrist": 10,
+            "otherHip": 22,
+            "otherKnee": 12,
+            "racketHip": -18,
+            "racketKnee": 14
+          }
+        },
+        {
+          "label": "Backswing",
+          "cue": "Racket back, weight on the back foot",
+          "duration": 500,
+          "pose": {
+            "torso": 6,
+            "otherShoulder": 75,
+            "otherElbow": 20,
+            "racketShoulder": -95,
+            "racketElbow": 30,
+            "wrist": -40,
+            "otherHip": 22,
+            "otherKnee": 10,
+            "racketHip": -16,
+            "racketKnee": 16
+          }
+        },
+        {
+          "label": "Drop and swing",
+          "cue": "Release the shuttle, swing through",
+          "linear": true,
+          "duration": 380,
+          "pose": {
+            "torso": 6,
+            "otherShoulder": 40,
+            "otherElbow": 20,
+            "racketShoulder": 20,
+            "racketElbow": 10,
+            "wrist": 10,
+            "otherHip": 22,
+            "otherKnee": 14,
+            "racketHip": -8,
+            "racketKnee": 18
+          }
+        },
+        {
+          "label": "High follow-through",
+          "cue": "Finish over the opposite shoulder",
+          "duration": 340,
+          "pose": {
+            "torso": 0,
+            "otherShoulder": 20,
+            "otherElbow": 50,
+            "racketShoulder": 170,
+            "racketElbow": 30,
+            "wrist": 10,
+            "otherHip": 18,
+            "otherKnee": 10,
+            "racketHip": 2,
+            "racketKnee": 32
+          }
+        },
+        {
+          "label": "Ready",
+          "cue": "Into ready stance",
+          "duration": 600,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 2,
+        "from": [-4, -60],
+        "arcIn": 0,
+        "inDuration": 380,
+        "to": [460, -460],
+        "arcOut": -40,
+        "outDuration": 700
+      },
+      "points": [
+        "Stand about 1 m behind the short service line.",
+        "Drop the shuttle in front of the racket foot.",
+        "The whole shuttle must be below 1.15 m at contact.",
+        "Shift weight back foot to front foot."
+      ],
+      "mistakes": [
+        "Lifting a foot before contact (fault).",
+        "Swinging too early.",
+        "Serving short and high."
+      ],
+      "drill": "Serve 20. Count how many land between the doubles long service line and the back line."
+    },
+    {
+      "id": "low-serve",
+      "level": "Strokes",
+      "title": "Low backhand serve",
+      "kind": "figure",
+      "summary": "The doubles serve. A short push that skims the tape.",
+      "keys": [
+        {
+          "label": "Set up",
+          "cue": "Racket foot forward, racket in front",
+          "duration": 0,
+          "pose": {
+            "torso": 8,
+            "racketShoulder": 60,
+            "racketElbow": 30,
+            "wrist": -80,
+            "otherShoulder": 50,
+            "otherElbow": 30,
+            "racketHip": 20,
+            "racketKnee": 20,
+            "otherHip": -15,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Short backswing",
+          "cue": "Draw the racket a few cm back",
+          "duration": 420,
+          "pose": {
+            "torso": 6,
+            "racketShoulder": 45,
+            "racketElbow": 40,
+            "wrist": -85,
+            "otherShoulder": 50,
+            "otherElbow": 30,
+            "racketHip": 20,
+            "racketKnee": 20,
+            "otherHip": -15,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Push",
+          "cue": "Thumb pushes, no wrist flick",
+          "duration": 260,
+          "pose": {
+            "torso": 10,
+            "racketShoulder": 72,
+            "racketElbow": 14,
+            "wrist": -62,
+            "otherShoulder": 30,
+            "otherElbow": 40,
+            "racketHip": 20,
+            "racketKnee": 22,
+            "otherHip": -15,
+            "otherKnee": 16
+          }
+        },
+        {
+          "label": "Racket up",
+          "cue": "Ready for the net reply",
+          "duration": 420,
+          "pose": {
+            "torso": 12,
+            "racketShoulder": 60,
+            "racketElbow": 60,
+            "wrist": 30,
+            "otherShoulder": 20,
+            "otherElbow": 50,
+            "racketHip": 22,
+            "racketKnee": 30,
+            "otherHip": -18,
+            "otherKnee": 26
+          }
+        }
+      ],
+      "shuttle": {
+        "contactKey": 2,
+        "from": [-6, 0],
+        "arcIn": 0,
+        "inDuration": 260,
+        "to": [260, -10],
+        "arcOut": -40,
+        "outDuration": 700
+      },
+      "points": [
+        "Hold the shuttle by a feather, cork toward the racket.",
+        "Short thumb push, still wrist.",
+        "Just clear the tape.",
+        "Racket up straight after."
+      ],
+      "mistakes": [
+        "Big backswing. The serve floats.",
+        "Wrist flick. Length varies.",
+        "Watching the serve."
+      ],
+      "drill": "Tie a string 20 cm above the net. Serve 30 between the tape and the string."
+    },
+    {
+      "id": "net-shot",
+      "level": "Strokes",
+      "title": "Forehand net shot",
+      "kind": "figure",
+      "summary": "A soft touch that tumbles just over the net, reached with a long lunge.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Split step",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Lunge",
+          "cue": "Racket leg forward, heel lands first",
+          "duration": 480,
+          "pose": {
+            "x": 46,
+            "torso": 22,
+            "racketHip": 78,
+            "racketKnee": 72,
+            "otherHip": -48,
+            "otherKnee": 8,
+            "racketShoulder": 80,
+            "racketElbow": 15,
+            "wrist": 15,
+            "otherShoulder": -60,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Soft contact",
+          "cue": "Meet it high, near the tape",
+          "duration": 220,
+          "pose": {
+            "x": 46,
+            "torso": 22,
+            "racketHip": 78,
+            "racketKnee": 72,
+            "otherHip": -48,
+            "otherKnee": 8,
+            "racketShoulder": 84,
+            "racketElbow": 12,
+            "wrist": 32,
+            "otherShoulder": -60,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Hold",
+          "cue": "Keep the racket up",
+          "duration": 260,
+          "pose": {
+            "x": 46,
+            "torso": 22,
+            "racketHip": 78,
+            "racketKnee": 72,
+            "otherHip": -48,
+            "otherKnee": 8,
+            "racketShoulder": 86,
+            "racketElbow": 14,
+            "wrist": 34,
+            "otherShoulder": -60,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Push back",
+          "cue": "Drive off the front foot to base",
+          "duration": 600,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 2,
+        "from": [110, -90],
+        "arcIn": -30,
+        "inDuration": 700,
+        "to": [70, -18],
+        "arcOut": -30,
+        "outDuration": 600
+      },
+      "points": [
+        "Lunge on the racket leg, knee over ankle.",
+        "Take it high and early.",
+        "Use fingers, not arm.",
+        "Push back off the heel."
+      ],
+      "mistakes": [
+        "Lunging on the wrong leg.",
+        "Letting it drop below the tape.",
+        "Swinging at it."
+      ],
+      "drill": "A partner throws shuttles to the net. Lunge, net shot, recover. 3 × 12.",
+      "netX": 190
+    },
+    {
+      "id": "lift",
+      "level": "Strokes",
+      "title": "Underarm lift",
+      "kind": "figure",
+      "summary": "From the net, send the shuttle high to the back. It resets a rally under pressure.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Read the drop",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Lunge, racket back",
+          "cue": "Prepare below the shuttle",
+          "duration": 480,
+          "pose": {
+            "x": 40,
+            "torso": 24,
+            "racketHip": 76,
+            "racketKnee": 70,
+            "otherHip": -46,
+            "otherKnee": 8,
+            "racketShoulder": 30,
+            "racketElbow": -20,
+            "wrist": -40,
+            "otherShoulder": -60,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Contact",
+          "cue": "Flick up from underneath",
+          "linear": true,
+          "duration": 200,
+          "pose": {
+            "x": 40,
+            "torso": 22,
+            "racketHip": 76,
+            "racketKnee": 70,
+            "otherHip": -46,
+            "otherKnee": 8,
+            "racketShoulder": 70,
+            "racketElbow": 0,
+            "wrist": -15,
+            "otherShoulder": -60,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Follow-through up",
+          "cue": "Racket finishes high",
+          "duration": 280,
+          "pose": {
+            "x": 40,
+            "torso": 18,
+            "racketHip": 76,
+            "racketKnee": 70,
+            "otherHip": -46,
+            "otherKnee": 8,
+            "racketShoulder": 140,
+            "racketElbow": 10,
+            "wrist": 10,
+            "otherShoulder": -50,
+            "otherElbow": 10
+          }
+        },
+        {
+          "label": "Recover",
+          "cue": "Back to base, expect a smash",
+          "duration": 620,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 2,
+        "from": [150, -40],
+        "arcIn": -40,
+        "inDuration": 700,
+        "to": [460, -460],
+        "arcOut": -40,
+        "outDuration": 700
+      },
+      "points": [
+        "Get the racket under the shuttle early.",
+        "Short, fast forearm rotation.",
+        "Lift high and deep.",
+        "Recover to the centre, slightly back."
+      ],
+      "mistakes": [
+        "Lifting short to mid court.",
+        "Late preparation.",
+        "Leaning over the front knee."
+      ],
+      "drill": "Partner feeds drops. Lift each to the back and recover. 3 × 15.",
+      "netX": 190
+    },
+    {
+      "id": "drive",
+      "level": "Strokes",
+      "title": "Forehand drive",
+      "kind": "figure",
+      "summary": "A fast, flat shot at shoulder height. Common in doubles.",
+      "keys": [
+        {
+          "label": "Ready",
+          "cue": "Racket up",
+          "duration": 0,
+          "pose": {}
+        },
+        {
+          "label": "Short backswing",
+          "cue": "Elbow up, racket cocked back",
+          "duration": 300,
+          "pose": {
+            "torso": 6,
+            "racketShoulder": 100,
+            "racketElbow": 80,
+            "wrist": 60,
+            "otherShoulder": 30,
+            "otherElbow": 40,
+            "racketHip": 10,
+            "racketKnee": 30
+          }
+        },
+        {
+          "label": "Contact",
+          "cue": "Flat, in front, at shoulder height",
+          "linear": true,
+          "duration": 140,
+          "pose": {
+            "torso": 12,
+            "racketShoulder": 95,
+            "racketElbow": 5,
+            "wrist": 0,
+            "otherShoulder": 20,
+            "otherElbow": 40,
+            "racketHip": 34,
+            "racketKnee": 44
+          }
+        },
+        {
+          "label": "Compact finish",
+          "cue": "Racket back up quickly",
+          "duration": 260,
+          "pose": {
+            "torso": 14,
+            "racketShoulder": 60,
+            "racketElbow": 40,
+            "wrist": -20,
+            "otherShoulder": 20,
+            "otherElbow": 40
+          }
+        },
+        {
+          "label": "Ready",
+          "cue": "Prepare for the return",
+          "duration": 420,
+          "pose": {}
+        }
+      ],
+      "shuttle": {
+        "contactKey": 2,
+        "from": [300, -10],
+        "arcIn": 0,
+        "inDuration": 420,
+        "to": [460, -20],
+        "arcOut": 0,
+        "outDuration": 380
+      },
+      "points": [
+        "Short swing.",
+        "Contact in front, at net height or above.",
+        "Snap with forearm and fingers.",
+        "Reset the racket in front."
+      ],
+      "mistakes": ["Big backswing.", "Contact beside the body.", "Hitting upward."],
+      "drill": "Drive rally from mid court: 30 flat hits without lifting."
+    }
+  ]
+}
