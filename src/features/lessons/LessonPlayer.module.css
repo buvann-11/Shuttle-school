@@ -1,0 +1,95 @@
+.player {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.progressBar {
+  flex: 1;
+  min-width: 120px;
+  max-width: 260px;
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.summary {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.hint {
+  margin-top: -6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hint kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+.finish {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.tick {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  color: #fff;
+}
+
+.tick[data-on='true'] {
+  background: var(--good);
+  border-color: var(--good);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+/* Touch devices have no keyboard hint to offer. */
+@media (hover: none) {
+  .hint {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .finish > * {
+    flex: 1;
+  }
+}

@@ -1,0 +1,51 @@
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  min-width: 0;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dot[data-tone='good'] {
+  background: var(--good);
+}
+.dot[data-tone='bad'] {
+  background: var(--bad);
+}
+.dot[data-tone='accent'] {
+  background: var(--accent);
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .notes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

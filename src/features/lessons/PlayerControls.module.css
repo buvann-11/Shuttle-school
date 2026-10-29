@@ -1,0 +1,55 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.play {
+  min-width: 108px;
+}
+
+.options > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.options > summary::-webkit-details-marker {
+  display: none;
+}
+
+.options > summary::before {
+  content: '▸';
+  font-size: 12px;
+  transition: transform 0.15s;
+}
+
+.options[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.options > summary:hover {
+  color: var(--ink);
+}
+
+.optionsBody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+}

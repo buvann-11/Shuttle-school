@@ -1,0 +1,27 @@
+.main {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 20px max(var(--gutter), env(safe-area-inset-right, 0px))
+    calc(48px + env(safe-area-inset-bottom, 0px)) max(var(--gutter), env(safe-area-inset-left, 0px));
+}
+
+.main:focus {
+  outline: none;
+}
+
+.skip {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  z-index: 20;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 8px;
+}

@@ -1,0 +1,84 @@
+.stage {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--court);
+  aspect-ratio: 16 / 9;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  position: absolute;
+  inset: 0 0 auto;
+  padding: 14px 16px 32px;
+  /* Keeps the step text legible when the racket passes behind it. */
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.32), rgb(0 0 0 / 0));
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--court-ink);
+  pointer-events: none;
+}
+
+.stepLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cue {
+  margin-top: 4px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.stepNo {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.legend {
+  position: absolute;
+  left: 16px;
+  bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #f4f7f5;
+  pointer-events: none;
+}
+
+.swatch {
+  display: inline-block;
+  width: 16px;
+  height: 5px;
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  .stepLabel {
+    font-size: 21px;
+  }
+  .cue {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stage {
+    aspect-ratio: 5 / 4;
+  }
+}

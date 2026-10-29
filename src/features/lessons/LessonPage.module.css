@@ -1,0 +1,23 @@
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.layout > nav {
+  position: sticky;
+  top: 82px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .layout > nav {
+    /* Not sticky on small screens; relative so the strip contains its own overflow. */
+    position: relative;
+    top: auto;
+  }
+}

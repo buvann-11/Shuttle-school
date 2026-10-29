@@ -1,0 +1,25 @@
+.notFound {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  max-width: 520px;
+  margin: 48px auto;
+}
+
+.notFound h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 8px 16px;
+  margin-top: 6px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
