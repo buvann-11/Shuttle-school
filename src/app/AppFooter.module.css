@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 18px max(var(--gutter), env(safe-area-inset-right, 0px))
+    calc(18px + env(safe-area-inset-bottom, 0px)) max(var(--gutter), env(safe-area-inset-left, 0px));
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+}
+
+.meta a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.meta a:hover {
+  color: var(--ink);
+}

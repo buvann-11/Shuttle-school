@@ -29,6 +29,7 @@
 }
 
 .wordmark {
+  white-space: nowrap;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 26px;
@@ -49,4 +50,58 @@
 
 .iconButton:hover {
   border-color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.install {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap);
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.install:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Phones: icon-only install button so the header never wraps (and never shifts the page). */
+@media (max-width: 480px) {
+  .install {
+    width: var(--tap);
+    padding: 0;
+    justify-content: center;
+  }
+  .installLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .wordmark {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand {
+    gap: 8px;
+  }
+  .wordmark {
+    font-size: 20px;
+  }
 }

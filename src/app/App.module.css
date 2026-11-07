@@ -1,4 +1,6 @@
 .main {
+  flex: 1;
+  width: 100%;
   max-width: var(--page-max);
   margin: 0 auto;
   padding: 20px max(var(--gutter), env(safe-area-inset-right, 0px))

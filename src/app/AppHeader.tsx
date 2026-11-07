@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
-import { AutoThemeIcon, LogoMark, MoonIcon, SunIcon } from '@/components/Icons';
+import { AutoThemeIcon, DownloadIcon, LogoMark, MoonIcon, SunIcon } from '@/components/Icons';
+import { promptInstall, usePwa } from '@/lib/pwa';
 import { updateSettings, useSettings, type Theme } from '@/lib/settings';
 import styles from './AppHeader.module.css';
 
@@ -12,6 +13,7 @@ const THEME_LABEL: Record<Theme, string> = {
 
 export function AppHeader() {
   const { theme } = useSettings();
+  const { installPrompt } = usePwa();
   const Icon = theme === 'light' ? SunIcon : theme === 'dark' ? MoonIcon : AutoThemeIcon;
 
   return (
@@ -21,17 +23,32 @@ export function AppHeader() {
           <LogoMark />
           <span className={styles.wordmark}>Shuttle School</span>
         </Link>
-        <button
-          type="button"
-          className={styles.iconButton}
-          onClick={() => {
-            updateSettings({ theme: NEXT_THEME[theme] });
-          }}
-          aria-label={`${THEME_LABEL[theme]}. Change theme`}
-          title={THEME_LABEL[theme]}
-        >
-          <Icon width={20} height={20} />
-        </button>
+        <div className={styles.actions}>
+          {installPrompt && (
+            <button
+              type="button"
+              className={styles.install}
+              title="Install app"
+              onClick={() => {
+                void promptInstall();
+              }}
+            >
+              <DownloadIcon />
+              <span className={styles.installLabel}>Install app</span>
+            </button>
+          )}
+          <button
+            type="button"
+            className={styles.iconButton}
+            onClick={() => {
+              updateSettings({ theme: NEXT_THEME[theme] });
+            }}
+            aria-label={`${THEME_LABEL[theme]}. Change theme`}
+            title={THEME_LABEL[theme]}
+          >
+            <Icon width={20} height={20} />
+          </button>
+        </div>
       </div>
     </header>
   );

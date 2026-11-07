@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router';
 import { applyTheme, useSettings } from '@/lib/settings';
+import { AppFooter } from './AppFooter';
 import { AppHeader } from './AppHeader';
+import { UpdateToast } from './UpdateToast';
 import styles from './App.module.css';
 
 export function AppLayout() {
@@ -27,6 +29,8 @@ export function AppLayout() {
       <main id="main" className={styles.main} tabIndex={-1}>
         <Outlet />
       </main>
+      <AppFooter />
+      <UpdateToast />
     </>
   );
 }

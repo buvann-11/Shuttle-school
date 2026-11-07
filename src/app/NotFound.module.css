@@ -4,6 +4,7 @@
   justify-items: start;
   max-width: 520px;
   margin: 48px auto;
+  padding-inline: var(--gutter);
 }
 
 .notFound h1 {
@@ -22,4 +23,43 @@
   color: var(--accent-ink);
   font-weight: 600;
   text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button.link {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 8px 16px;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.detail {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.detail code {
+  display: block;
+  margin-top: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
