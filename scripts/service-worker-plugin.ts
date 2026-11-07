@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readdirSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import type { Plugin } from 'vite';
 
@@ -10,10 +10,23 @@ function listFiles(dir: string): string[] {
   });
 }
 
+/** Files that are never needed offline. */
+const SKIP = [
+  /\.map$/,
+  /\.woff$/,
+  /^404\.html$/,
+  /^og-image\.png$/,
+  /^robots\.txt$/,
+  /^screenshots\//,
+];
+
+/** How long a page request waits for the network before falling back to the cached app. */
+const NAVIGATION_TIMEOUT_MS = 3500;
+
 /**
  * Emits `sw.js`, a precaching service worker for every built asset, so the app
- * works fully offline after the first visit. The cache name is a hash of the
- * asset list, so each deploy replaces the previous cache.
+ * works fully offline after the first visit. The cache name is a hash of every
+ * cached file's contents, so any change in a deploy replaces the old cache.
  */
 export function serviceWorker(): Plugin {
   let publicDir = '';
@@ -24,17 +37,29 @@ export function serviceWorker(): Plugin {
       publicDir = config.publicDir;
     },
     generateBundle(_options, bundle) {
-      // Skip source maps and legacy .woff fonts (every supported browser uses .woff2).
-      const built = Object.keys(bundle).filter((f) => !f.endsWith('.map') && !f.endsWith('.woff'));
-      const fromPublic = publicDir
-        ? listFiles(publicDir).map((f) => relative(publicDir, f).split('\\').join('/'))
-        : [];
-      const assets = ['./', ...new Set([...built, ...fromPublic])].sort();
-      const version = createHash('sha256').update(assets.join('\n')).digest('hex').slice(0, 12);
+      const hash = createHash('sha256');
+      const assets: string[] = [];
+
+      for (const [name, chunk] of Object.entries(bundle)) {
+        if (SKIP.some((re) => re.test(name))) continue;
+        assets.push(name);
+        hash.update(name).update(chunk.type === 'chunk' ? chunk.code : chunk.source);
+      }
+      if (publicDir) {
+        for (const file of listFiles(publicDir)) {
+          const name = relative(publicDir, file).split('\\').join('/');
+          if (SKIP.some((re) => re.test(name))) continue;
+          assets.push(name);
+          hash.update(name).update(readFileSync(file));
+        }
+      }
+      assets.sort();
+      const version = hash.digest('hex').slice(0, 12);
 
       const source = `/* Generated at build time. Do not edit. */
 const CACHE = 'shuttle-school-${version}';
-const ASSETS = ${JSON.stringify(assets)};
+const SHELL = './';
+const ASSETS = ${JSON.stringify([...new Set(['./', ...assets])])};
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
@@ -48,14 +73,32 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Pages: network first so new deploys show up, but give up after a few seconds on
+// a weak connection (a sports hall, say) and serve the cached app instead.
+function navigate(request) {
+  const network = fetch(request).then((response) => {
+    if (response.ok) {
+      const copy = response.clone();
+      caches.open(CACHE).then((cache) => cache.put(SHELL, copy));
+    }
+    return response;
+  });
+  const fallback = new Promise((resolve) => {
+    setTimeout(() => resolve(caches.match(SHELL)), ${NAVIGATION_TIMEOUT_MS});
+  });
+  return Promise.race([network.catch(() => caches.match(SHELL)), fallback]).then(
+    (response) => response || network,
+  );
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   if (request.mode === 'navigate') {
-    // Network first for the page so new deploys show up; cached shell when offline.
-    event.respondWith(fetch(request).catch(() => caches.match('./')));
+    event.respondWith(navigate(request));
     return;
   }
+  // Assets are content-hashed, so a cached copy is always correct.
   event.respondWith(caches.match(request).then((hit) => hit || fetch(request)));
 });
 `;
