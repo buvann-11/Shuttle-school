@@ -13,8 +13,36 @@
   gap: 8px;
 }
 
+.side {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.transport {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .play {
   min-width: 108px;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  border-color: var(--muted);
 }
 
 .options > summary {

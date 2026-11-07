@@ -1,0 +1,82 @@
+.scrubber {
+  position: relative;
+  height: 32px;
+  touch-action: none;
+}
+
+.track {
+  position: absolute;
+  inset: 13px 0 auto;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--sunk);
+  border: 1px solid var(--line);
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  will-change: transform;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.tick {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 12px;
+  margin-left: -1px;
+  transform: translateY(-50%);
+  border-radius: 1px;
+  background: var(--muted);
+}
+
+/* The native range input sits on top for behaviour and accessibility; only its thumb shows. */
+.input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input::-webkit-slider-runnable-track {
+  height: 100%;
+  background: transparent;
+}
+
+.input::-moz-range-track {
+  background: transparent;
+}
+
+.input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 6px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  background: var(--accent);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
+}
+
+.input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  background: var(--accent);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

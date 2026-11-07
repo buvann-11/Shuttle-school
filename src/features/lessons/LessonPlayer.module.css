@@ -34,8 +34,27 @@
   color: var(--muted);
 }
 
+.theater {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* Full screen: the stage fills the screen, controls stay underneath. */
+.theater:fullscreen {
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px))
+    max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background: var(--bg);
+}
+
+.theater:fullscreen > figure {
+  aspect-ratio: auto;
+  min-height: 0;
+}
+
 .hint {
-  margin-top: -6px;
   font-size: 13px;
   color: var(--muted);
 }

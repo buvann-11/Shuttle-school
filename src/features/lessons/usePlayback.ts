@@ -14,12 +14,19 @@ export interface Playback {
   toggle: () => void;
   setPlaying: (playing: boolean) => void;
   goToPhase: (i: number) => void;
+  /** Jumps to time `t` (ms) and pauses there. */
+  seek: (t: number) => void;
 }
 
 interface Options {
   timeline: Timeline;
   speed: number;
   autoplay: boolean;
+  /**
+   * Temporarily stops the frame loop without changing `playing`, e.g. while the
+   * stage is scrolled off-screen or the tab is hidden. Saves battery and CPU.
+   */
+  suspended?: boolean;
   /** Called once per animation frame while playing, after time has advanced. */
   onFrame?: (t: number) => void;
   /** Time to show when paused at start (e.g. a key step for reduced-motion users). */
@@ -35,6 +42,7 @@ export function usePlayback({
   timeline,
   speed,
   autoplay,
+  suspended = false,
   onFrame,
   initialTime = 0,
 }: Options): Playback {
@@ -49,7 +57,7 @@ export function usePlayback({
   });
 
   useEffect(() => {
-    if (!playing) return;
+    if (!playing || suspended) return;
     let raf = 0;
     let last: number | null = null;
     const tick = (now: number) => {
@@ -66,17 +74,24 @@ export function usePlayback({
     return () => {
       cancelAnimationFrame(raf);
     };
-  }, [playing, speed, timeline]);
+  }, [playing, suspended, speed, timeline]);
 
-  const goToPhase = useCallback(
-    (i: number) => {
-      const t = timeOfPhase(timeline, i);
-      timeRef.current = t;
+  const seek = useCallback(
+    (t: number) => {
+      const clamped = Math.min(timeline.total, Math.max(0, t));
+      timeRef.current = clamped;
       setPlaying(false);
-      setPhase(sampleTimeline(timeline, t).phase);
+      setPhase(sampleTimeline(timeline, clamped).phase);
       setRevision((r) => r + 1);
     },
     [timeline],
+  );
+
+  const goToPhase = useCallback(
+    (i: number) => {
+      seek(timeOfPhase(timeline, i));
+    },
+    [seek, timeline],
   );
 
   const toggle = useCallback(() => {
@@ -85,5 +100,5 @@ export function usePlayback({
     setPlaying(!playing);
   }, [playing, timeline]);
 
-  return { timeRef, playing, phase, revision, toggle, setPlaying, goToPhase };
+  return { timeRef, playing, phase, revision, toggle, setPlaying, goToPhase, seek };
 }
