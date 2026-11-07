@@ -48,6 +48,83 @@ test.describe('lessons', () => {
   });
 });
 
+test.describe('player', () => {
+  test('the seek bar scrubs through the stroke', async ({ page }) => {
+    await page.goto('/#/lessons/clear');
+    const slider = page.getByRole('slider', { name: 'Animation position' });
+    const box = await slider.boundingBox();
+    if (!box) throw new Error('slider not rendered');
+    await page.mouse.click(box.x + box.width * 0.55, box.y + box.height / 2);
+    await expect(page.getByRole('button', { name: 'Play' })).toBeVisible();
+    await expect(slider).toHaveAttribute('aria-valuetext', /^Step [3-5] of 6/);
+  });
+
+  test('step buttons move one step at a time', async ({ page }) => {
+    await page.goto('/#/lessons/smash');
+    await page.getByRole('button', { name: 'Next step' }).click();
+    await expect(page.getByText('Step 2 of 6')).toBeVisible();
+    await page.getByRole('button', { name: 'Previous step' }).click();
+    await expect(page.getByText('Step 1 of 6')).toBeVisible();
+  });
+});
+
+test.describe('production readiness', () => {
+  test('loads with no console errors or security-policy violations', async ({ page }) => {
+    const problems: string[] = [];
+    page.on('console', (m) => {
+      if (m.type() === 'error') problems.push(m.text());
+    });
+    page.on('pageerror', (e) => problems.push(e.message));
+    await page.goto('/#/lessons/smash');
+    await page.getByRole('button', { name: 'Next step' }).click();
+    await page.getByRole('link', { name: /forehand clear/i }).click();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Forehand clear');
+    expect(problems).toEqual([]);
+  });
+
+  test('ships a strict content security policy', async ({ page }) => {
+    await page.goto('/');
+    const csp = await page
+      .locator('meta[http-equiv="Content-Security-Policy"]')
+      .getAttribute('content');
+    expect(csp).toContain("default-src 'self'");
+    expect(csp).not.toContain('unsafe-inline');
+  });
+
+  test('has link-preview tags and a reachable preview image', async ({ page, request }) => {
+    await page.goto('/');
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      'content',
+      /og-image\.png$/,
+    );
+    const image = await request.get('/og-image.png');
+    expect(image.ok()).toBe(true);
+    expect(image.headers()['content-type']).toContain('image/png');
+    const manifest = await request.get('/manifest.webmanifest');
+    expect(((await manifest.json()) as { name: string }).name).toBe('Shuttle School');
+  });
+
+  test('the header does not jump when the install button appears', async ({ page }) => {
+    await page.goto('/#/lessons/clear');
+    const header = page.getByRole('banner');
+    const before = await header.boundingBox();
+    await page.evaluate(() => {
+      const e = Object.assign(new Event('beforeinstallprompt', { cancelable: true }), {
+        prompt: () => Promise.resolve(),
+        userChoice: Promise.resolve({ outcome: 'dismissed' }),
+      });
+      window.dispatchEvent(e);
+    });
+    await expect(page.getByRole('button', { name: 'Install app' })).toBeVisible();
+    expect((await header.boundingBox())?.height).toBe(before?.height);
+  });
+
+  test('the 404 page sends visitors to the app', async ({ page }) => {
+    await page.goto('/404.html');
+    await expect(page).toHaveURL(/#\/lessons\/grip$/);
+  });
+});
+
 test.describe('accessibility', () => {
   for (const scheme of ['light', 'dark'] as const) {
     test(`has no axe violations (${scheme})`, async ({ page }) => {
