@@ -32,4 +32,4 @@ First public release.
 - Content Security Policy, link-preview image and tags, GitHub Pages 404 redirect.
 - CI on every push and pull request; the site deploys only when every check passes on `main`.
 
-[1.0.0]: https://github.com/buvann-11/shuttle-school/releases/tag/v1.0.0
+[1.0.0]: https://github.com/buvann-11/Shuttle-school/releases/tag/v1.0.0

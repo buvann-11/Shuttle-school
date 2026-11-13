@@ -1,11 +1,11 @@
 # Shuttle School
 
-[![CI](https://github.com/buvann-11/shuttle-school/actions/workflows/ci.yml/badge.svg)](https://github.com/buvann-11/shuttle-school/actions/workflows/ci.yml)
+[![CI](https://github.com/buvann-11/Shuttle-school/actions/workflows/ci.yml/badge.svg)](https://github.com/buvann-11/Shuttle-school/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Learn badminton strokes visually, step by step, without a coach.
 
-**Try it:** https://buvann-11.github.io/shuttle-school/
+**Try it:** https://buvann-11.github.io/Shuttle-school/
 
 <p>
   <img src="docs/screenshots/laptop.png" alt="Smash lesson on a laptop, paused at the contact step" width="68%">

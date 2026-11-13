@@ -1,6 +1,6 @@
 import styles from './AppFooter.module.css';
 
-export const REPO_URL = 'https://github.com/buvann-11/shuttle-school';
+export const REPO_URL = 'https://github.com/buvann-11/Shuttle-school';
 
 export function AppFooter() {
   return (

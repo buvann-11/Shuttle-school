@@ -92,7 +92,7 @@ describe('app chrome', () => {
     expect(footer).toHaveTextContent(/stay on this device/i);
     expect(screen.getByRole('link', { name: 'Source on GitHub' })).toHaveAttribute(
       'href',
-      'https://github.com/buvann-11/shuttle-school',
+      'https://github.com/buvann-11/Shuttle-school',
     );
   });
 
